@@ -12,7 +12,7 @@ import Hello from './components/Hello';
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // );
-
+//
 ReactDOM.render(
   <Hello name="Ray" enthusiasmLevel={5}></Hello>,
   document.getElementById('root') as HTMLElement
