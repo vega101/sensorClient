@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+//import './index.css';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Hello from './components/Hello';
+//import Hello from './components/Hello';
+import App from './App';
+
 //import Counter from './components/Counter'
 
 // ReactDOM.render(
@@ -13,8 +15,13 @@ import Hello from './components/Hello';
 //   document.getElementById('root')
 // );
 
+// ReactDOM.render(
+//   <Hello name="Ray" enthusiasmLevel={5}></Hello>,
+//   document.getElementById('root') as HTMLElement
+// );
+
 ReactDOM.render(
-  <Hello name="Ray" enthusiasmLevel={5}></Hello>,
+  <App></App>,
   document.getElementById('root') as HTMLElement
 );
 

@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import PageHeader from "./components/PageHeader";
+import NavPanel from "./components/NavPanel";
+import SubContainer from "./components/SubContainer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import {
+    BrowserRouter as Router
+  } from "react-router-dom";
+ 
+class App  extends Component {  
+    render() {
+       return <React.Fragment>
+            <Router>
+                <PageHeader></PageHeader>   
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+                <div className="container-fluid">
+                    <div className="row">
+                        <NavPanel></NavPanel>
+                        <SubContainer></SubContainer>       
+                    </div>
+                </div>
+            </Router>
+        </React.Fragment>
+        
+    }
 }
-
-export default App;
+ 
+export default App ;
