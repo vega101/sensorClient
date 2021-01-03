@@ -53,7 +53,7 @@ code {
 
 @media (max-width: 767.98px) {
   .sidebar {
-    top: 5rem;
+    top: 2rem;
   }
 }
 
@@ -76,8 +76,8 @@ code {
   color: #727272;
 }
 
-.sidebar .nav-link.active {
-  color: #007bff;
+.sidebarNavLinkActive {
+  color: #007bff !important;
 }
 
 .sidebar .nav-link:hover .feather,

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import CurrentObservations from "./CurrentObservations";
+
 import {
     Switch,
     Route
@@ -9,14 +11,15 @@ class SubContainer extends Component {
     render() { 
         return <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <Switch>
-                    <Route path="/about">
-                        <h1>About</h1>
+                    <Route path="/detailedata">
+                        <h1>Detailed Data</h1>
                     </Route>
-                    <Route path="/users">
-                        <h1>Users</h1>
+                    <Route path="/forecast">
+                        <h1>Forecast</h1>
                     </Route>
                     <Route path="/">
-                        <h1>Home</h1>
+                        <h1>Current Observations</h1>
+                        <CurrentObservations></CurrentObservations>
                     </Route>
             </Switch>
          </main>

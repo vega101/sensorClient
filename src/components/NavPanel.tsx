@@ -1,86 +1,42 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
- 
-class NavPanel extends Component {
+export interface Props {
+  isNavExpanded: boolean,
+  onHandleToggleNavPane: () => void;
+}
+
+class NavPanel extends Component<Props, {}> {
    
     render() { 
-        return <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        return <nav id="sidebarMenu" className={`${this.props.isNavExpanded ? '' : 'collapse'} col-md-3 col-lg-2 d-md-block bg-light sidebar`}>
         <div className="position-sticky pt-3">
           <ul className="nav flex-column">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <NavLink className="nav-link" to="/" onClick={this.props.onHandleToggleNavPane} exact activeClassName="sidebarNavLinkActive">Current Observations</NavLink>
               {/* <a className="nav-link active" aria-current="page" href="http://redmagenta.co.uk/">
                 <span data-feather="home"></span>
                 Dashboard
               </a> */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <NavLink className="nav-link" to="/detailedata" onClick={this.props.onHandleToggleNavPane} exact activeClassName="sidebarNavLinkActive">Detailed Data</NavLink>
               {/* <a className="nav-link" href="http://redmagenta.co.uk/">
                 <span data-feather="file"></span>
                 Orders
               </a> */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/users">Users</Link>
+              <NavLink className="nav-link" to="/forecast" onClick={this.props.onHandleToggleNavPane} exact activeClassName="sidebarNavLinkActive">Forecast</NavLink>
               {/* <a className="nav-link" href="http://redmagenta.co.uk/">
                 <span data-feather="shopping-cart"></span>
                 Products
               </a> */}
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="users"></span>
-                Customers
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="bar-chart-2"></span>
-                Reports
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="layers"></span>
-                Integrations
-              </a>
-            </li>
+           
           </ul>
   
-          <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a className="link-secondary" href="http://redmagenta.co.uk/" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-          <ul className="nav flex-column mb-2">
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="file-text"></span>
-                Current month
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="file-text"></span>
-                Last quarter
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="file-text"></span>
-                Social engagement
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="http://redmagenta.co.uk/">
-                <span data-feather="file-text"></span>
-                Year-end sale
-              </a>
-            </li>
-          </ul>
+        
         </div>
       </nav>
   

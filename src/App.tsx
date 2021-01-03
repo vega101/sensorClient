@@ -8,15 +8,39 @@ import {
     BrowserRouter as Router
   } from "react-router-dom";
  
-class App  extends Component {  
+  interface stateInterface {
+    isNavExpanded: boolean;
+  }
+
+class App  extends Component<{}, stateInterface> {
+    setIsNavExpanded: (isNavExpanded: boolean) => void;  
+    
+    constructor(props: object) {
+        super(props);
+        // this.state = {
+        //   isNavExpanded: false
+        // };
+
+        this.state= {isNavExpanded: false} as stateInterface;
+      
+        this.setIsNavExpanded = (isNavExpanded: boolean) => {
+          this.setState({ isNavExpanded: isNavExpanded });
+        }             
+      }
+     
+    handleToggleNavPane = () => {
+        this.setIsNavExpanded(!this.state.isNavExpanded);
+        
+    }
+
     render() {
        return <React.Fragment>
             <Router>
-                <PageHeader></PageHeader>   
+                <PageHeader onHandleToggleNavPane={this.handleToggleNavPane}></PageHeader>   
 
                 <div className="container-fluid">
                     <div className="row">
-                        <NavPanel></NavPanel>
+                        <NavPanel onHandleToggleNavPane={this.handleToggleNavPane} isNavExpanded={this.state.isNavExpanded}></NavPanel>
                         <SubContainer></SubContainer>       
                     </div>
                 </div>
