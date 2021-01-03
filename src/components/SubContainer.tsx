@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CurrentObservations from "./CurrentObservations";
+import CurrentObservations from "./CurrentObservationsDashboard/CurrentObservations";
 
 import {
     Switch,
@@ -17,8 +17,7 @@ class SubContainer extends Component {
                     <Route path="/forecast">
                         <h1>Forecast</h1>
                     </Route>
-                    <Route path="/">
-                        <h1>Current Observations</h1>
+                    <Route path="/">                       
                         <CurrentObservations></CurrentObservations>
                     </Route>
             </Switch>

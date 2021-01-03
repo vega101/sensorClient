@@ -1,10 +1,16 @@
 body {
+  background: #eef5f9;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.headerBar {
+  background-color:#1e88e5;
+  min-height:70px;
 }
 
 code {
@@ -47,8 +53,8 @@ code {
   /* rtl:remove */
   left: 0;
   z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  padding: 60px 0 0; /* Height of navbar */
+  box-shadow: 1px 0 20px rgba(0,0,0,.08)
 }
 
 @media (max-width: 767.98px) {
@@ -98,8 +104,7 @@ code {
   padding-top: .75rem;
   padding-bottom: .75rem;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  background-color:#1e88e5;
   margin-right: 0rem  !important;
 }
 
@@ -158,4 +163,42 @@ code {
 }
 *, ::after, ::before {
     box-sizing: border-box;
+}
+
+.headlinePanel {
+  height:10rem;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: 4px;
+  padding:1rem;
+}
+
+.headlinePanelText {
+  color: white;
+  font-family: "Poppins",sans-serif;
+}
+.currentTemperaturePanel {
+  background-color: #7460ee;
+}
+
+.currentHumidityPanel {
+  background-color:#21c1d6;
+}
+
+.card .card-title {
+  position: relative;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.headlinePanelValue {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.headlinePanelValueWrapper {
+  position: relative !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;  
 }
