@@ -104,7 +104,6 @@ code {
   padding-top: .75rem;
   padding-bottom: .75rem;
   font-size: 1rem;
-  background-color:#1e88e5;
   margin-right: 0rem  !important;
 }
 
@@ -185,10 +184,15 @@ code {
 }
 
 .card .card-title {
-  position: relative;
-  font-weight: 400;
-  font-size: 18px;
-  margin-bottom: 7px;
+  position: relative !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  margin-bottom: 7px !important;
+}
+
+.card .card-subtitle {
+  font-weight: 300 !important;
+  margin-bottom: 10px !important;
 }
 
 .headlinePanelValue {
@@ -201,4 +205,28 @@ code {
   position: relative !important;
   padding-left: 15px !important;
   padding-right: 15px !important;  
+}
+
+.op-5 {
+  opacity: .5;
+}
+
+.navMenuButton {
+  border: 1px solid #68acff;
+}
+
+.navMenuButtonIcon {
+  color: hsla(0,0%,100%,.8);
+}
+
+.logoFirst {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.logoSecond {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
 }

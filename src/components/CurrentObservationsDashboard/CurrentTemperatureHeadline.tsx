@@ -27,7 +27,7 @@ class CurrentTemperature  extends Component<Props, State> {
                             </div>
                         </div>
                         <div className="mt-2 row">
-                            <div className="align-self-center col-4 headlinePanelValueWrapper">
+                            <div className="align-self-center headlinePanelValueWrapper">
                                 <span className="headlinePanelValue">21.1c</span>
                             </div>
                         </div>
