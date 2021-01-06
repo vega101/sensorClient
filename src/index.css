@@ -61,6 +61,7 @@ code {
   .sidebar {
     top: 2rem;
   }
+  
 }
 
 .sidebar-sticky {
@@ -171,16 +172,32 @@ code {
   padding:1rem;
 }
 
+.headlinePanelOuter {
+  background-color: #ffffff;
+  border: 0px !important;
+  box-shadow: 1px 0 20px rgba(0,0,0,.08) !important;
+  -webkit-box-shadow: 1px 0 20px rgba(0,0,0,.08) !important;
+}
+
 .headlinePanelText {
   color: white;
   font-family: "Poppins",sans-serif;
 }
-.currentTemperaturePanel {
+
+.currentTemperatureInfo {
   background-color: #7460ee;
 }
 
-.currentHumidityPanel {
+.currentHumidityInfo {
   background-color:#21c1d6;
+}
+
+.hignLowTemperatureInfo {
+  background-color: #ffb22b;
+}
+
+.highLowHumidityInfo {
+  background-color: #fc4b6c;
 }
 
 .card .card-title {
@@ -198,7 +215,7 @@ code {
 .headlinePanelValue {
   font-weight: 300;
   font-size: 1.5rem;
-  color: white;
+  color:  #8898aa !important;;
 }
 
 .headlinePanelValueWrapper {
@@ -253,4 +270,40 @@ code {
 
 .headerNavBar li {
   float: left;
+}
+
+.round {
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+}
+
+.round, .round img {
+  border-radius: 100%;
+}
+
+.round.round-info {
+  background: #7460ee;
+}
+.round-lg {
+  line-height: 65px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.circleIcon {
+  vertical-align: -0.13em !important;
+}
+
+.headlinePanelTitle {
+  color: #455a64  !important;
+  font-weight: 300;
+}
+
+.headlinePanelSubTitle {
+  color: #8898aa !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
 }
