@@ -22,7 +22,7 @@ class HighLowTemperatureHeadline  extends Component<Props, State> {
                                 </span>
                             </div>
                             <div>
-                                <div className="headlinePanelTitle card-title">High/Low Temperature Last 24 Hours</div>
+                                <div className="headlinePanelTitle card-title">High/Low Temperature</div>
                                 <div className="headlinePanelSubTitle">Location 1</div>
                             </div>
                         </div>
