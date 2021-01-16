@@ -307,3 +307,34 @@ code {
   font-weight: 400 !important;
   font-size: 1rem !important;
 }
+
+.sidebar-item {
+
+}
+
+.MuiTreeView-root {
+  margin: 10px !important;
+}
+.MuiTreeItem-root.Mui-expanded > div {
+    background: #21c1d6;
+    color: #fff;
+    border-radius: 4px;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    font-weight: 400;
+    padding: 8px 35px 8px 8px;
+    white-space: nowrap;
+    align-items: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.MuiTreeItem-root.Mui-expanded .MuiTreeItem-content {
+  margin-bottom: 20px;
+}
+.MuiCollapse-wrapperInner .MuiTreeItem-root .MuiTreeItem-content .MuiTypography-root {
+  font-family: "Poppins",sans-serif !important;
+    font-size: .875rem;
+    font-weight: 300;
+    color: #607d8b;
+}

@@ -22,7 +22,7 @@ class CurrentHumidityHeadline  extends Component<Props, State> {
                                 </span>
                             </div>
                             <div>
-                                <div className="headlinePanelTitle card-title">Current Temperature</div>
+                                <div className="headlinePanelTitle card-title">Current Humidity</div>
                                 <div className="headlinePanelSubTitle">Location 1</div>
                             </div>
                         </div>

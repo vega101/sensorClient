@@ -9,7 +9,7 @@ import { faBars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 //https://stackoverflow.com/questions/29689966/typescript-how-to-define-type-for-a-function-callback-as-any-function-type-no
 //https://stackoverflow.com/questions/47561848/property-value-does-not-exist-on-type-readonly
 export interface Props {
-  onHandleToggleNavPane: () => void;
+  onHandleToggleNavPane: Function;
 }
 
 class PageHeader extends Component<Props, {}> {
@@ -27,7 +27,7 @@ class PageHeader extends Component<Props, {}> {
               <FontAwesomeIcon className="navMenuButtonIcon" icon={faSignOutAlt} size="lg" />
             </Nav.Link>
             <Form inline>
-              <Button onClick={this.props.onHandleToggleNavPane} className="navMenuButton" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <Button onClick={() => this.props.onHandleToggleNavPane("/detailedata")} className="navMenuButton" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <FontAwesomeIcon className="navMenuButtonIcon" icon={faBars}  size="lg" />
               </Button>
             </Form>
