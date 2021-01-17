@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThermometerHalf } from '@fortawesome/free-solid-svg-icons'
 
 export interface Props {
-    
+    value: number
 }
  
 export interface State {
@@ -11,7 +11,7 @@ export interface State {
 }
  
 class CurrentTemperatureHeadline  extends Component<Props, State> {
-    state = { currentTemperature :  21.1}
+    //state = { currentTemperature :  21.1}
     render() { 
         return <div className="headlinePanelOuter currentTemperaturePanel card">
                     <div className="card-body">
@@ -28,7 +28,7 @@ class CurrentTemperatureHeadline  extends Component<Props, State> {
                         </div>
                         <div className="mt-2 row">
                             <div className="align-self-center headlinePanelValueWrapper">
-                                <span className="headlinePanelValue">21.1c</span>
+                                <span className="headlinePanelValue">{this.props.value}c</span>
                             </div>
                         </div>
                     </div>   

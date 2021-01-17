@@ -26,7 +26,17 @@ const state = {
   }
  
 class ChartTemperature  extends Component<Props, State> {
+
     //state = { currentTemperature :  21.1}
+
+    // componentWillReceiveProps(newProps:Props) {
+    //   console.log("chart data!")
+    // }
+
+    componentDidUpdate(prevProps: Props, prevState: Props) {
+      console.log('Component DID UPDATE!', prevProps, prevState)
+   }
+
     render() { 
         return <div className="headlinePanelOuter currentTemperaturePanel card">
                     <div className="card-body">

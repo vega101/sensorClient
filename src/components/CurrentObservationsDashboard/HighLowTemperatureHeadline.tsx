@@ -3,8 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThermometerHalf } from '@fortawesome/free-solid-svg-icons'
 
 export interface Props {
-    
+    value:{
+        highValue: number,
+        lowValue: number
+      }
 }
+
+// interface tempInterface {
+//     highValue: number,
+//     lowValue: number
+// }
  
 export interface State {
     currentTemperature : number
@@ -28,7 +36,7 @@ class HighLowTemperatureHeadline  extends Component<Props, State> {
                         </div>
                         <div className="mt-2 row">
                             <div className="align-self-center headlinePanelValueWrapper">
-                                <span className="headlinePanelValue">High: 21.1c / Low: 18.4</span>
+                                <span className="headlinePanelValue">High: {this.props.value.highValue}c / Low: {this.props.value.lowValue}c</span>
                             </div>
                         </div>
                     </div>    

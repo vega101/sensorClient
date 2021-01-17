@@ -1,0 +1,36 @@
+the client website:
+on linux vm, after connecting type
+cd /
+this will get you to root, then
+cd var/www/sensor_project/html
+
+the service site is here
+cd /var/sensor_project/sensor_project_service
+
+commands
+move up a directory:
+cd ../
+
+list directory contents:
+ls
+list directory contents with more detail:
+ls -l
+
+copy directory: (-R is for recursive copy, * is wildcard)
+cp -R <source_folder>/* <destination_folder>
+e.g.
+cp -R /etc/* /etc_backup
+
+To Get Started
+pick a director for the git project (thi project);
+get the git url from github & then clone it into that directory.
+then run :
+`npm run build`
+then copy contents of 'build' folder into:
+var/www/sensor_project/html
+
+
+
+
+
+

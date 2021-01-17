@@ -3,15 +3,12 @@ import PageHeader from "./components/PageHeader";
 import NavPanel from "./components/NavPanel";
 import SubContainer from "./components/SubContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useHistory } from "react-router-dom";
 import './index.css';
 import {
     BrowserRouter as Router
   } from "react-router-dom";
 
 const App = () => {
-  const history = useHistory();
-  console.log(history);
   const [isNavExpanded, setIsNavExpanded] = useState(false);
  
   //const handleSetIsNavExpanded = (event: { target: { value: React.SetStateAction<boolean>; }; }) => setIsNavExpanded(event.target.value);

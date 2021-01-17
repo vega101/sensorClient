@@ -3,15 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTint } from '@fortawesome/free-solid-svg-icons'
 
 export interface Props {
-    
+    value:number
 }
  
 export interface State {
     currentHumidity : number
 }
+
+
  
 class CurrentHumidityHeadline  extends Component<Props, State> {
-    state = { currentHumidity :  78.8}
+    //state = { currentHumidity :  78.8}
     render() { 
         return <div className="headlinePanelOuter currentHumidityPanel card">
                <div className="card-body">
@@ -28,7 +30,7 @@ class CurrentHumidityHeadline  extends Component<Props, State> {
                         </div>
                         <div className="mt-2 row">
                             <div className="align-self-center headlinePanelValueWrapper">
-                                <span className="headlinePanelValue">78.6%</span>
+                                <span className="headlinePanelValue">{this.props.value}%</span>
                             </div>
                         </div>
                     </div>   
