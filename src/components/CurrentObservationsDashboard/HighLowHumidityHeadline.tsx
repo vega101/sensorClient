@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTint } from '@fortawesome/free-solid-svg-icons'
 
 export interface Props {
-    
+    value:{
+        highValue: number,
+        lowValue: number
+      }   
 }
  
 export interface State {
@@ -28,7 +31,7 @@ class HighLowHumidityHeadline  extends Component<Props, State> {
                             </div>
                             <div className="mt-2 row">
                                 <div className="align-self-center headlinePanelValueWrapper">
-                                    <span className="headlinePanelValue">High: 78.8% / Low: 72.6%</span>
+                                    <span className="headlinePanelValue">High: {this.props.value.highValue}% / Low: {this.props.value.lowValue}%</span>
                                 </div>
                             </div>
                         </div>  

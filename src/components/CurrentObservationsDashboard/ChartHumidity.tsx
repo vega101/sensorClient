@@ -25,12 +25,12 @@ export interface ChartItem {
   value: number
 }
  
-class ChartTemperature  extends Component<Props, State> {
+class ChartHumidity  extends Component<Props, State> {
     state = {
       labels: [],
       datasets: [
         {
-          label: 'Temperature',
+          label: 'Humidity',
           fill: false,
           lineTension: 0.5,
           backgroundColor: 'rgba(75,192,192,1)',
@@ -65,7 +65,7 @@ class ChartTemperature  extends Component<Props, State> {
           labels: labels,
           datasets: [
             {
-              label: 'Temperature',
+              label: 'Humidity',
               fill: false,
               lineTension: 0.5,
               backgroundColor: 'rgba(75,192,192,1)',
@@ -88,7 +88,7 @@ class ChartTemperature  extends Component<Props, State> {
                             options={{
                                 title:{
                                 display:true,
-                                text:'Temperature Last 24 Hours',
+                                text:'Humidity Last 24 Hours',
                                 fontSize:20
                                 },
                                 legend:{
@@ -103,4 +103,4 @@ class ChartTemperature  extends Component<Props, State> {
     }
 }
  
-export default ChartTemperature ;
+export default ChartHumidity ;

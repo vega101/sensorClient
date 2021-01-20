@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import {Line} from 'react-chartjs-2';
 
 export interface Props {
-  value: Array<ChartItem>
+  value: {
+    high: Array<ChartItem>,
+    low: Array<ChartItem>
+  }
 }
  
 export interface State {
@@ -25,16 +28,25 @@ export interface ChartItem {
   value: number
 }
  
-class ChartTemperature  extends Component<Props, State> {
+class ChartHighLowHumidity  extends Component<Props, State> {
     state = {
       labels: [],
       datasets: [
         {
-          label: 'Temperature',
+          label: 'Humidity High',
           fill: false,
           lineTension: 0.5,
           backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
+          borderColor: '#dc3545',
+          borderWidth: 2,
+          data: []
+        },
+        {
+          label: 'Humidity Low',
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor: 'rgba(75,192,192,1)',
+          borderColor: '#0062cc',
           borderWidth: 2,
           data: []
         }
@@ -47,31 +59,51 @@ class ChartTemperature  extends Component<Props, State> {
       if (prevProps.value !== this.props.value) {
 
         let labels: string[] = [];
-        let data: number[] = [];
+        let dataHigh: number[] = [];
+        let dataLow: number[] = [];
 
-        this.props.value.forEach(item => {
+        this.props.value.high.forEach(item => {
           let itemDate = new Date(item.date * 1000);
-          let hours = itemDate.getHours();
           let day = itemDate.getDate();   
           let month = itemDate.getMonth() + 1;         
           let year = itemDate.getFullYear();
           
-          let formattedDate =  `${day}/${month}/${year} ${hours}:00`; 
+          let formattedDate =  `${day}/${month}/${year}`; 
           labels.push(formattedDate);
-          data.push(item.value);
+          dataHigh.push(item.value);
+        });
+
+        this.props.value.low.forEach(item => {
+          let itemDate = new Date(item.date * 1000);
+          let day = itemDate.getDate();   
+          let month = itemDate.getMonth() + 1;         
+          let year = itemDate.getFullYear();
+          
+          let formattedDate =  `${day}/${month}/${year}`; 
+          labels.push(formattedDate);
+          dataLow.push(item.value);
         });
 
         this.setState({
           labels: labels,
           datasets: [
             {
-              label: 'Temperature',
+              label: 'Humidity High',
               fill: false,
               lineTension: 0.5,
               backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: 'rgba(0,0,0,1)',
+              borderColor: '#dc3545',
               borderWidth: 2,
-              data: data
+              data: dataHigh
+            },
+            {
+              label: 'Humidity Low',
+              fill: false,
+              lineTension: 0.5,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: '#0062cc',
+              borderWidth: 2,
+              data: dataLow
             }
           ]
         })
@@ -88,7 +120,7 @@ class ChartTemperature  extends Component<Props, State> {
                             options={{
                                 title:{
                                 display:true,
-                                text:'Temperature Last 24 Hours',
+                                text:'High/Low Humidity Last 7 Days',
                                 fontSize:20
                                 },
                                 legend:{
@@ -103,4 +135,4 @@ class ChartTemperature  extends Component<Props, State> {
     }
 }
  
-export default ChartTemperature ;
+export default ChartHighLowHumidity ;
