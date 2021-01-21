@@ -1,31 +1,17 @@
 import React, { Component } from "react";
 import {Line} from 'react-chartjs-2';
+import {IDataSetItem, IDataItem} from "../../Interfaces";
 
 export interface Props {
   value: {
-    high: Array<ChartItem>,
-    low: Array<ChartItem>
+    high: Array<IDataItem>,
+    low: Array<IDataItem>
   }
 }
  
 export interface State {
     labels: Array<string>,
-    datasets: Array<DataSetItem>
-}
-
-export interface DataSetItem {
-  label: string,
-  fill: boolean,
-  lineTension: number,
-  backgroundColor: string,
-  borderColor: string,
-  borderWidth: number,
-  data: Array<number>
-}
-
-export interface ChartItem {
-  date: number,
-  value: number
+    datasets: Array<IDataSetItem>
 }
  
 class ChartHighLowTemperature  extends Component<Props, State> {

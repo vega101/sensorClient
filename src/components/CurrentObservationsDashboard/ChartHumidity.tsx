@@ -1,29 +1,16 @@
 import React, { Component } from "react";
 import {Line} from 'react-chartjs-2';
+import {IDataSetItem, IDataItem} from "../../Interfaces";
 
 export interface Props {
-  value: Array<ChartItem>
+  value: Array<IDataItem>
 }
  
 export interface State {
     labels: Array<string>,
-    datasets: Array<DataSetItem>
+    datasets: Array<IDataSetItem>
 }
 
-export interface DataSetItem {
-  label: string,
-  fill: boolean,
-  lineTension: number,
-  backgroundColor: string,
-  borderColor: string,
-  borderWidth: number,
-  data: Array<number>
-}
-
-export interface ChartItem {
-  date: number,
-  value: number
-}
  
 class ChartHumidity  extends Component<Props, State> {
     state = {

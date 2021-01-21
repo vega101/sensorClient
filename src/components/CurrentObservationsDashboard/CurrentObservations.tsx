@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {IDataItem} from "../../Interfaces";
 import CurrentTemperatureHeadline from "./CurrentTemperatureHeadline";
 import CurrentHumidityHeadline from "./CurrentHumidityHeadline";
 import HighLowTemperatureHeadline from "./HighLowTemperatureHeadline";
@@ -24,22 +25,16 @@ export interface State {
     lowValue: number
   },
   highLowTemperature7Results: {
-    high: Array<ChartItem>,
-    low: Array<ChartItem>
+    high: Array<IDataItem>,
+    low: Array<IDataItem>
   },
   highLowHumidity7Results: {
-    high: Array<ChartItem>,
-    low: Array<ChartItem>
+    high: Array<IDataItem>,
+    low: Array<IDataItem>
   }
-  temperature24Results: Array<ChartItem>,
-  humidity24Results: Array<ChartItem>  
+  temperature24Results: Array<IDataItem>,
+  humidity24Results: Array<IDataItem>  
 }
-
-export interface ChartItem {
-    date: number,
-    value: number
-}
-
  
 class CurrentObservations  extends Component<Props, State> {
    state = {
