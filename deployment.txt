@@ -2,10 +2,22 @@ the client website:
 on linux vm, after connecting type
 cd /
 this will get you to root, then
-cd var/www/sensor_project/html
+cd /var/www/sensor_project/html
+
+the source project is stored in 
+var/sensor_project/sensorClient
+
+run:
+num run build
+
+copy the contents of:
+/var/sensor_project/sensorClient/build
+
+to this location
+/var/www/sensor_project/html
 
 the service site is here
-cd /var/sensor_project/sensor_project_service
+/var/sensor_project/sensor_project_service
 
 commands
 move up a directory:
