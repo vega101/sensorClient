@@ -15,29 +15,7 @@ export interface State {
 }
  
 class ChartHighLowHumidity  extends Component<Props, State> {
-    state = {
-      labels: [],
-      datasets: [
-        {
-          label: 'Humidity High',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: '#dc3545',
-          borderWidth: 2,
-          data: []
-        },
-        {
-          label: 'Humidity Low',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: '#0062cc',
-          borderWidth: 2,
-          data: []
-        }
-      ]
-    }
+    state = this.getStateObject([], [], []);
 
     componentDidUpdate(prevProps: Props, prevState: State) {
       
@@ -49,53 +27,56 @@ class ChartHighLowHumidity  extends Component<Props, State> {
         let dataLow: number[] = [];
 
         this.props.value.high.forEach(item => {
-          let itemDate = new Date(item.date * 1000);
-          let day = itemDate.getDate();   
-          let month = itemDate.getMonth() + 1;         
-          let year = itemDate.getFullYear();
-          
-          let formattedDate =  `${day}/${month}/${year}`; 
+          let formattedDate = this.getFormattedDate(item);
           labels.push(formattedDate);
           dataHigh.push(item.value);
         });
 
         this.props.value.low.forEach(item => {
-          let itemDate = new Date(item.date * 1000);
-          let day = itemDate.getDate();   
-          let month = itemDate.getMonth() + 1;         
-          let year = itemDate.getFullYear();
-          
-          let formattedDate =  `${day}/${month}/${year}`; 
+          let formattedDate = this.getFormattedDate(item);
           labels.push(formattedDate);
           dataLow.push(item.value);
         });
 
-        this.setState({
-          labels: labels,
-          datasets: [
-            {
-              label: 'Humidity High',
-              fill: false,
-              lineTension: 0.5,
-              backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: '#dc3545',
-              borderWidth: 2,
-              data: dataHigh
-            },
-            {
-              label: 'Humidity Low',
-              fill: false,
-              lineTension: 0.5,
-              backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: '#0062cc',
-              borderWidth: 2,
-              data: dataLow
-            }
-          ]
-        })
+        this.setState(this.getStateObject(labels, dataHigh, dataLow));
 
       }
 
+   }
+
+   getFormattedDate(item: IDataItem){
+      let itemDate = new Date(item.date * 1000);
+      let day = itemDate.getDate();   
+      let month = itemDate.getMonth() + 1;         
+      let year = itemDate.getFullYear();  
+      let formattedDate =  `${day}/${month}/${year}`; 
+      return formattedDate;
+   }
+
+   getStateObject(labels: Array<string>, dataHigh: Array<number>, dataLow: Array<number>){
+      return {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Humidity High',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: 'rgba(75,192,192,1)',
+            borderColor: '#dc3545',
+            borderWidth: 2,
+            data: dataHigh
+          },
+          {
+            label: 'Humidity Low',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: 'rgba(75,192,192,1)',
+            borderColor: '#0062cc',
+            borderWidth: 2,
+            data: dataLow
+          }
+        ]
+      }
    }
 
     render() { 

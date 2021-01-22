@@ -13,24 +13,9 @@ export interface State {
 
  
 class ChartHumidity  extends Component<Props, State> {
-    state = {
-      labels: [],
-      datasets: [
-        {
-          label: 'Humidity',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: []
-        }
-      ]
-    }
+    state = this.getStateObject([], []);
 
     componentDidUpdate(prevProps: Props, prevState: State) {
-      
-
       if (prevProps.value !== this.props.value) {
 
         let labels: string[] = [];
@@ -48,23 +33,25 @@ class ChartHumidity  extends Component<Props, State> {
           data.push(item.value);
         });
 
-        this.setState({
-          labels: labels,
-          datasets: [
-            {
-              label: 'Humidity',
-              fill: false,
-              lineTension: 0.5,
-              backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: 'rgba(0,0,0,1)',
-              borderWidth: 2,
-              data: data
-            }
-          ]
-        })
-
+        this.setState(this.getStateObject(labels, data));
       }
+   }
 
+   getStateObject(labels: Array<string>, data: Array<number>){
+      return {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Humidity',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: 'rgba(75,192,192,1)',
+            borderColor: 'rgba(0,0,0,1)',
+            borderWidth: 2,
+            data: data
+          }
+        ]
+      }
    }
 
     render() { 
