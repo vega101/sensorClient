@@ -71,7 +71,7 @@ class ChartHighLowHumidity  extends Component<Props, State> {
             fill: false,
             lineTension: 0.5,
             backgroundColor: 'rgba(75,192,192,1)',
-            borderColor: '#0062cc',
+            borderColor: '#4a99c7',
             borderWidth: 2,
             data: dataLow
           }

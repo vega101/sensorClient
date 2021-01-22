@@ -61,7 +61,7 @@ class CurrentObservations  extends Component<Props, State> {
   }
      
     componentDidMount() {
-      fetch('http://localhost:3600/getCurrentObservations')
+      fetch('http://service.redmagenta.co.uk/getCurrentObservations')
       .then(res => res.json())
       .then((data) => {
         this.setState({ 
