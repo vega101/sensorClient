@@ -14,3 +14,8 @@
   date: number,
   value: number
 }
+
+export interface IDataHighLowItem {
+  date: string,
+  value: number
+}

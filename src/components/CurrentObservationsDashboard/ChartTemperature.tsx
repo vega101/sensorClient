@@ -45,7 +45,7 @@ class ChartTemperature  extends Component<Props, State> {
           backgroundColor: 'rgba(75,192,192,1)',
           borderColor: '#4a99c7',
           borderWidth: 2,
-          data: data
+          data: data,
         }
       ]
     }
@@ -63,7 +63,7 @@ class ChartTemperature  extends Component<Props, State> {
                                 fontSize:20
                                 },
                                 legend:{
-                                display:true,
+                                display:false,
                                 position:'right'
                                 }
                             }}

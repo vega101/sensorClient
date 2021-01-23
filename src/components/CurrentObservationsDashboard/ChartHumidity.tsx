@@ -66,7 +66,7 @@ class ChartHumidity  extends Component<Props, State> {
                                 fontSize:20
                                 },
                                 legend:{
-                                display:true,
+                                display:false,
                                 position:'right'
                                 }
                             }}

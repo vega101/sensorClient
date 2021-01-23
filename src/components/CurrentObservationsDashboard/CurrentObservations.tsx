@@ -61,7 +61,9 @@ class CurrentObservations  extends Component<Props, State> {
   }
      
     componentDidMount() {
-      fetch('http://service.redmagenta.co.uk/getCurrentObservations')
+      //local: http://localhost:3600/getCurrentObservations
+      //service: http://service.redmagenta.co.uk/getCurrentObservations
+      fetch('http://service.redmagenta.co.uk/getCurrentObservations') 
       .then(res => res.json())
       .then((data) => {
         this.setState({ 
@@ -81,7 +83,7 @@ class CurrentObservations  extends Component<Props, State> {
           },
           highLowHumidity7Results: {
             high: data.highLowHumidity7Results.high,
-            low: data.highLowHumidity7Results.high
+            low: data.highLowHumidity7Results.low
           },
           temperature24Results: data.temperature24Results,
           humidity24Results: data.humidity24Results 

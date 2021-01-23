@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import {Line} from 'react-chartjs-2';
-import {IDataSetItem, IDataItem} from "../../Interfaces";
+import {IDataSetItem, IDataHighLowItem} from "../../Interfaces";
 
 export interface Props {
   value: {
-    high: Array<IDataItem>,
-    low: Array<IDataItem>
+    high: Array<IDataHighLowItem>,
+    low: Array<IDataHighLowItem>
   }
 }
  
@@ -16,6 +16,7 @@ export interface State {
  
 class ChartHighLowTemperature  extends Component<Props, State> {
     state = this.getStateObject([], [], []);
+    days: Array<string> = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     componentDidUpdate(prevProps: Props, prevState: State) {
       
@@ -33,8 +34,6 @@ class ChartHighLowTemperature  extends Component<Props, State> {
         });
 
         this.props.value.low.forEach(item => {
-          let formattedDate = this.getFormattedDate(item);
-          labels.push(formattedDate);
           dataLow.push(item.value);
         });
 
@@ -44,13 +43,12 @@ class ChartHighLowTemperature  extends Component<Props, State> {
 
    }
 
-   getFormattedDate(item: IDataItem){
-      let itemDate = new Date(item.date * 1000);
-      let day = itemDate.getDate();   
-      let month = itemDate.getMonth() + 1;         
-      let year = itemDate.getFullYear();  
-      let formattedDate =  `${day}/${month}/${year}`; 
-      return formattedDate;
+   getFormattedDate(item: IDataHighLowItem){
+      let dateArr = item.date.split("-");
+      let itemDate = new Date(Number(dateArr[0]), Number(dateArr[1]), Number(dateArr[2]))
+      let day = itemDate.getDay() - 1;
+      let dayOfWeek = this.days[day];
+      return dayOfWeek;
    }
 
    getStateObject(labels: Array<string>, dataHigh: Array<number>, dataLow: Array<number>){
@@ -91,7 +89,7 @@ class ChartHighLowTemperature  extends Component<Props, State> {
                                 fontSize:20
                                 },
                                 legend:{
-                                display:true,
+                                display:false,
                                 position:'right'
                                 }
                             }}
