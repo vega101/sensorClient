@@ -22,10 +22,11 @@ class ChartTemperature  extends Component<Props, State> {
         this.props.value.forEach(item => {
           let itemDate = new Date(item.date * 1000);
           let hours = itemDate.getHours();
-          let day = itemDate.getDate();   
-          let month = itemDate.getMonth() + 1;         
-          let year = itemDate.getFullYear();   
-          let formattedDate =  `${day}/${month}/${year} ${hours}:00`; 
+          // let day = itemDate.getDate();   
+          // let month = itemDate.getMonth() + 1;         
+          // let year = itemDate.getFullYear();   
+          // let formattedDate =  `${day}/${month}/${year} ${hours}:00`; 
+          let formattedDate = `${hours}:00`
           labels.push(formattedDate);
           data.push(item.value);
         });
