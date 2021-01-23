@@ -18,6 +18,9 @@ to this location
 
 cp -R /var/sensor_project/sensorClient/build/* /var/www/sensor_project/html
 
+to delete directories and all contents
+rm -rf dirname
+
 the service site is here
 /var/sensor_project/sensor_project_service
 
