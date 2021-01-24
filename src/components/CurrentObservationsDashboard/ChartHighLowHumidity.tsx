@@ -16,7 +16,7 @@ export interface State {
  
 class ChartHighLowHumidity  extends Component<Props, State> {
     state = this.getStateObject([], [], []);
-    days: Array<string> = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    days: Array<string> = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     componentDidUpdate(prevProps: Props, prevState: State) {
     
@@ -45,7 +45,7 @@ class ChartHighLowHumidity  extends Component<Props, State> {
    getFormattedDate(item: IDataHighLowItem){
     let dateArr = item.date.split("-");
     let itemDate = new Date(Number(dateArr[0]), Number(dateArr[1]), Number(dateArr[2]))
-    let day = itemDate.getDay() - 1;
+    let day = itemDate.getDay();
     let dayOfWeek = this.days[day];
     return dayOfWeek;
    }
